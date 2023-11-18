@@ -1,12 +1,387 @@
 #include <iostream>
-/*
 
-	--------------Day 3------------------------------
+// ---------------------------------Day 1----------------------
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքները, և տպել դրանցից առավելագույնի արժեքը:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//     }
+//         int max = arr[0];
+//     for (int i = 0; i < size; ++i)
+//     {
+//             if (arr[i] > max)
+//         {
+//             max = arr[i];
+//         }
+//         std::cout << arr[i] << " ";
+//     }
+
+//     std::cout << "Maximum is : " << max;
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքները և տպում է էկրանին նվազագույնի արժեքը:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//     }
+//     int min = arr[0];
+//     for (int i = 0; i < size; ++i)
+//     {
+//             if (arr[i] < min)
+//         {
+//             min = arr[i];
+//         }
+//         std::cout << arr[i] << " ";
+//     }
+
+//     std::cout << "Maximum is : " << min;
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքները և տպում է առավելագույն արժեքով էլեմենտի ինդեքսը։
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int max_i{};
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//         if (arr[i] > arr[max_i])
+//         {
+//             max_i = i;
+//         }
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+
+//     std::cout << "The index of maximum is : " << max_i;
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքները և տպում է նվազագույն արժեքով էլեմենտի ինդեքսը։
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int min_i{};
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//         if (arr[i] < arr[min_i])
+//         {
+//             min_i = i;
+//         }
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+
+//     std::cout << "The index of minimum is : " << min_i;
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքները և տպում է նվազագույն և առավելագույն արժեքներով էլեմենտների գումարը:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int min_i{};
+//     int max_i{};
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//         if (arr[i] < arr[min_i])
+//         {
+//             min_i = i;
+//         }
+//         max_i = i;
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+
+//     std::cout << "The sum of minimum and maximum elements is : " << arr[min_i] + arr[max_i];
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքերը և տպում է բոլոր էլեմենտների գումարը, արտադրյալը:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int sum{};
+//     int mul = 1;
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//         sum += arr[i];
+//         mul *= arr[i];
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+//     std::cout << std::endl;
+//     std::cout << "The sum of elements is : " << sum  << std::endl << "The mul of elements is : " << mul;
+//     return 0;
+// }
+
+// ծրագիր, որը թույլ կտա մուտքագրել ամբողջ թվային զանգված։ Զանգվածի բոլոր էլեմենտները փոխարինել այդ էլեմենտի արժեքը բաժանած զանգվածում էլեմենտների քանակի վրա։
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//         arr[i] /= size;
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+//     return 0;
+// }
+
+// Գրեք ծրագիր,  որը օգտվողին թույլ կտա մուտքագրել նույն չափսի, երկու ամբողջ թվային զանգվածների էլեմենտների արժեքները և տպում է՝ համապատասխանող ինդեքսեներով էլեմնետների արտադրյալը էկրանին:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int arr1[size];
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element of first array : ";
+//         std::cin >> arr[i];
+//         std::cout << "Enter the " << i + 1 << " element of second array : ";
+//         std::cin >> arr1[i];
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] * arr1[i] << " ";
+//     }
+//     return 0;
+// }
+
+// Գրեք ծրագիր,  որը օգտվողին թույլ կտա մուտքագրել զանգվածի էլեմենտների արժեքները և տպում է դրանք հակառակ հերթականությամբ: Զանգվածը կարող է լինել ցանկացած տիպի։
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//     }
+//     for (int i = size - 1; i >= 0; --i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել ամբողջ թվային զանգվածի էլեմենտների արժեքները և տպում է այդ զանգավածի էլեմենտների միջին թվաբանականի արժեքը:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int sum{};
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//         sum += arr[i];
+//     }
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+//     std::cout << std::endl;
+//     std::cout << "The average of array elements is : " << sum / size << std::endl ;
+//     return 0;
+// }
+
+// Գրել ծրագիր, որը ստանում է ամբողջ թվային զանգված և թիվ։ Եթե զանգվածում առկա է տրված թիվը տպել YES, հակառակ դեպքում տպել NO։
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int num{};
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//     }
+//     std::cout << "Enter number to search : ";
+//     std::cin >> num;
+//     for (int i = 0; i < size; ++i)
+//     {
+//         if (arr[i] == num)
+//         {
+//             std::cout << "YES";
+//             return 0;
+//         }
+//     }
+//     std::cout << "NO";
+//     return 0;
+// }
+
+// Գրել ֆունկցիա, որը ստանում է զանգված եւ ինդեքսի համար։ Ֆունկցիան հեռացնում է զանգվածի տրված ինդեքսով տարրը եւ վերադարձնում նոր զանգվածը որպես արդյունք։
+
+// void delete_from_arr(int* arr, const int size, int index)
+// {
+//     for (int i = index; i < size - 1; ++i)
+//     {
+//         arr[i] = arr[i + 1];
+//     }
+//     for (int i = 0; i < size - 1; ++i)
+//     {
+//         std::cout << arr[i] << " ";
+//     }
+// }
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 5;
+//     int arr[size];
+//     int index{};
+//     for (int i = 0; i < size; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> arr[i];
+//     }
+//     std::cout << "Enter index to delete : ";
+//     std::cin >> index;
+//     delete_from_arr(arr, size, index);
+//     return 0;
+//}
+
+// Գրեք ծրագիր,  որը օգտվողին թույլ կտա մուտքագրել char-երի զանգված և դուրս կբերի բոլոր թվերը:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 6;
+//     char str[size];
+//     std::cout << "Enter the string : ";
+//     std::cin >> str;
+//     for (int i = 0; i < size; ++i)
+//     {
+//         if (str[i] >= '0' && str[i] <= '9')
+//         {
+//             std::cout << str[i] << " ";
+//         }
+//     }
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել char-երի զանգված և հեռացնում է կրկնվող նիշերը տողից:
+
+// int main(int argc, char const *argv[])
+// {
+//     const int size = 6;
+//     char str[size];
+//     std::cout << "Enter the string : ";
+//     std::cin >> str;
+//     for (int i = 0; i < size; ++i)
+//     {
+//         if (str[i] >= '0' && str[i] <= '9')
+//         {
+//             std::cout << str[i] << " ";
+//         }
+//     }
+//     return 0;
+// }
+
+// Գրեք ծրագիր, որը օգտվողին թույլ կտա մուտքագրել char-երի զանգված և հեռացնում է կրկնվող նիշերը տողից:
+
+// int main(int argc, char const *argv[])
+// {
+//     int size{};
+//     char str[] = "sahdjsadgas";
+//     while (str[size])
+//     {
+//         ++size;
+//     }
+//     bool repeat;
+//     for (int i = 0; i < size - 1; ++i)
+//     {
+//         repeat = false;
+//         for (int j = i + 1; j < size; ++j)
+//         {
+//             if (str[i] == str[j])
+//             {
+//                 str[j] = '\0';
+//                 repeat = true;
+//             }
+//         }
+//         if (repeat)
+//         {
+//             str[i] = '\0';
+//         }
+//     }
+//    int j = size - 1;
+//     for (int i = 0; i != j; ++i)
+//     {
+//         if (str[i] != '\0')
+//         {
+//             continue;
+//         }
+//         else if(str[j] == '\0')
+//         {
+//             --j;
+//             --i;
+//         }
+//         else
+//         {
+//             str[i] = str[j];
+//             str[j] = '\0';
+//             --j;
+//         }
+//     }
+//     std::cout << str;
+//     return 0;
+// }
+
+/*
+    --------------Day 3------------------------------
 */
 
 //	Իրականացնել ֆունկցիա, որը ստանում է ամբողջ թվային պարամետր և վերադարձնում է n-րդ Ֆիբոնաչիի թիվը։
 
-//int fib(int n)
+// int fib(int n)
 //{
 //	if (n <= 1)
 //	{
@@ -22,8 +397,8 @@
 //		c = a + b;
 //	}
 //	return c;
-//}
-//int fib_r(int n)
+// }
+// int fib_r(int n)
 //{
 //	if (n == 1)
 //	{
@@ -34,23 +409,23 @@
 //		return 1;
 //	}
 //	return fib_r(n - 1) + fib_r(n - 2);
-//}
-//int main()
+// }
+// int main()
 //{
 //	std::cout << fib_r(5);
 //	return 0;
-//} 
+// }
 
 //	Table of a Number : Գրել ֆունկցիա, որը կտպի տրված թվի բազմապատկման աղյուսակը։
 
-//void table(int n)
+// void table(int n)
 //{
 //	for (int i = 0; i <= 9; i++)
 //	{
 //		std::cout << n << " * " << i << " = " << n * i << std::endl;
 //	}
-//}
-//void table_r(int n, int count = 10)
+// }
+// void table_r(int n, int count = 10)
 //{
 //	if (count <= 0)
 //	{
@@ -58,18 +433,18 @@
 //	}
 //	table_r(n, --count);
 //	std::cout << n * count << std::endl;
-//}
+// }
 //
-//int main()
+// int main()
 //{
 //	table_r(5);
 //	return 0;
-//}
+// }
 
 /*
-	Գրել տրված թվի ֆակտորիալը հաշվող իտերատիվ ֆունկցիա։
+    Գրել տրված թվի ֆակտորիալը հաշվող իտերատիվ ֆունկցիա։
 */
-//int factorial(int n)
+// int factorial(int n)
 //{
 //	int res = 1;
 //	for (int i = 1; i <= n; ++i)
@@ -77,25 +452,25 @@
 //		res *= i;
 //	}
 //	return res;
-//}
-//int factorial_r(int n)
+// }
+// int factorial_r(int n)
 //{
 //	if (n <= 1)
 //	{
 //		return n;
 //	}
 //	return n * factorial_r(n - 1);   --n greluc xi chi ashxatum
-//}
-//int main()
+// }
+// int main()
 //{
 //	std::cout << factorial_r(5);
 //	return 0;
-//}
+// }
 
 /*
-	Իրականացնել ֆունկցիա, որն ընդունում է թիվ և վերադարձնում նրա թվանշանների գումարը:
+    Իրականացնել ֆունկցիա, որն ընդունում է թիվ և վերադարձնում նրա թվանշանների գումարը:
 */
-//int sign_sum(int n)
+// int sign_sum(int n)
 //{
 //	if (n <= 0)
 //	{
@@ -108,20 +483,20 @@
 //		n /= 10;
 //	}
 //	return sum;
-//}
-//int sign_sum_r(int n)
+// }
+// int sign_sum_r(int n)
 //{
 //	if (n == 0)
 //	{
 //		return 0;
 //	}
 //	return (n % 10) + sign_sum(n / 10);
-//}
-//int main()
+// }
+// int main()
 //{
 //	std::cout << sign_sum(1238);
 //	return 0;
-//}
+// }
 
 //  Իրականացնել ֆունկցիա, որը ստուգում է՝ թիվը պարզ է, թե ո։ Պարզ է համարվում այն թիվը, որը առանց մնացորդ կարող է բաժանվել ինքը իր վրա և մեկի վրա (մեկը պարզ թիվ չէ)։
 
@@ -139,7 +514,7 @@
 //	}
 //	return true;
 //}
-//bool parz_r(int n, int div = 2)
+// bool parz_r(int n, int div = 2)
 //{
 //	if (n <= 1)
 //	{
@@ -156,7 +531,7 @@
 //	return parz_r(n, ++div);
 //}
 //
-//int main()
+// int main()
 //{
 //	std::cout << parz_r(2);
 //	return 0;
@@ -180,12 +555,12 @@
 // 	}
 // 	return parz_r(n, div + 1);
 // }
-//bool foo(int n)
+// bool foo(int n)
 //{
-	// if(n < 4)
-	// {
-	// 	return false;
-	// }
+// if(n < 4)
+// {
+// 	return false;
+// }
 //	for (int i = 2; i <= n / 2; ++i)
 //	{
 //		if (parz_r(i) && parz_r(n - i))
@@ -257,7 +632,6 @@
 // 	std::cout << binary_search(arr, 7, 3);
 // }
 
-
 // ----------------------------------------------------------- astichan
 
 // int pow(int num, int exp)
@@ -310,7 +684,7 @@
 // 	while(tmp)
 // 	{
 // 		std::cout << tmp / digit << " ";
-// 		tmp %= digit; 
+// 		tmp %= digit;
 // 		tmp /= 10;
 // 		digit /= 10;
 // 	}
@@ -331,9 +705,7 @@
 // {
 // 	get_sign(12454);
 // }
-//   
-
-
+//
 
 //------------------------------------------- 16-akan hamakarg
 
@@ -369,7 +741,7 @@
 // 				case 15:
 // 					std::cout << 'F';
 // 					break;
-				
+
 // 			}
 // 		}
 // 		else
@@ -384,91 +756,151 @@
 
 //        --------------------------------------    32-akan cragir
 
-const char* str = "ABCDEFGHIJKLMNOPQRSTUV";
-void to_tw_r(int num)
-{
-	if(num == 0)
-	{
-		std::cout << "0_";
-		return;
-	}
-	to_tw_r(num / 32);
+// const char* str = "ABCDEFGHIJKLMNOPQRSTUV";
+// void to_tw_r(int num)
+// {
+// 	if(num == 0)
+// 	{
+// 		std::cout << "0_";
+// 		return;
+// 	}
+// 	to_tw_r(num / 32);
 
-		int tmp = num % 32;
-		if(tmp >= 10)
-		{
-			std::cout << str[tmp - 10];
-		}
-		else
-		{
-			std::cout << tmp;
-		}
-}
+// 		int tmp = num % 32;
+// 		if(tmp >= 10)
+// 		{
+// 			std::cout << str[tmp - 10];
+// 		}
+// 		else
+// 		{
+// 			std::cout << tmp;
+// 		}
+// }
 
-int pow_r(int num, int exp)
-{
-	if(exp <= 0)
-	{
-		return 1;
-	}
-	if(num == 1 || num == 0)
-	{
-		return num;
-	}
-	if(exp == 0)
-	{
-		return 1;
-	}
-	return num * pow_r(num, exp - 1);
-}
-int from_32_to_dec(const char* num)
-{
-	int size = 0;
-	int res = 0;
-	while(num[size])
-	{
-		++size;
-	}
-	for(int i = 2; num[i]; ++i)
-	{
-		if(num[i] >= 'a' && num[i] <= 'z')
-		{
-			std::cout << "Poqratar chi kareli TXAAA" << std::endl;
-			return -1;
-		}
-		if(num[i] >= '0' && num[i] <= '9')
-		{
-			res += (num[i] - 48) * pow_r(32,size - i - 1);
-		}
-		else
-		{
-			res += (num[i] - 55) * pow_r(32,size - i - 1);
-		}
-	}
-	return res;
-}
-int main(void)
-{
-	std::cout << "Enter the number : ";
-	int num{};
-	std::cin >> num;
-	to_tw_r(num);
-	std::cout << std::endl;
-	std::cout << "Enter the 32-akan number with suffix 0_ : ";
-	char str[20];
-	std::cin >> str;
-	std::cout << from_32_to_dec(str) << std::endl;
-}
+// int pow_r(int num, int exp)
+// {
+// 	if(exp <= 0)
+// 	{
+// 		return 1;
+// 	}
+// 	if(num == 1 || num == 0)
+// 	{
+// 		return num;
+// 	}
+// 	if(exp == 0)
+// 	{
+// 		return 1;
+// 	}
+// 	return num * pow_r(num, exp - 1);
+// }
+// int from_32_to_dec(const char* num)
+// {
+// 	int size = 0;
+// 	int res = 0;
+// 	while(num[size])
+// 	{
+// 		++size;
+// 	}
+// 	for(int i = 2; num[i]; ++i)
+// 	{
+// 		if(num[i] >= 'a' && num[i] <= 'z')
+// 		{
+// 			std::cout << "Poqratar chi kareli TXAAA" << std::endl;
+// 			return -1;
+// 		}
+// 		if(num[i] >= '0' && num[i] <= '9')
+// 		{
+// 			res += (num[i] - 48) * pow_r(32,size - i - 1);
+// 		}
+// 		else
+// 		{
+// 			res += (num[i] - 55) * pow_r(32,size - i - 1);
+// 		}
+// 	}
+// 	return res;
+// }
+// int main(void)
+// {
+// 	std::cout << "Enter the number : ";
+// 	int num{};
+// 	std::cin >> num;
+// 	to_tw_r(num);
+// 	std::cout << std::endl;
+// 	std::cout << "Enter the 32-akan number with suffix 0_ : ";
+// 	char str[20];
+// 	std::cin >> str;
+// 	std::cout << from_32_to_dec(str) << std::endl;
+// }
+
+//     --------------------Ete polindrom e veradarcnel true, ete che gumarel reversy qani der polindrom chi darel
+
+// int reverce(int num)
+// {
+//     int res{};
+//     while (num)
+//     {
+//         res *= 10;
+//         res += num % 10;
+//         num /= 10;
+//     }
+//     return res;
+// }
 
 
 
+// // bool polindrom(int n)
+// // {
+// //     int tmp = n;
+// //     int count{};
+// //     int start = 1;
+// //     int end = 10;
+// //     while (tmp)
+// //     {
+// //         ++count;
+// //         tmp /= 10;
+// //     }
+// //     for (int i = 1; i < count; ++i)
+// //     {
+// //         start *= 10;
+// //     }
+// //     int i = 0;
+// //     while (i != count / 2)
+// //     {
+// //         if ((n / start) != (n % end))
+// //         {
+// //             return false;
+// //         }
+// //         n %= start;
+// //         n /= end;
+// //         start /= 100;
+// //         ++i;
+// //     }
+
+// //     return true;
+// // }
 
 
-
-
-
-
-
-
-
-	
+// bool polindrom(int n)
+// {
+//     if(n == reverce(n))
+//     {
+//         return true;
+//     }
+//     return false;
+// }
+// int check(int num)
+// {
+//     int count{};
+//     while (!polindrom(num))
+//     {
+//         num += reverce(num);
+//         ++count;
+//     }
+//      std::cout << num << std::endl;
+//     return count;
+// }
+// int main(int argc, char const *argv[])
+// {
+//     std::cout << check(86752209);
+//     return 0;
+// }
