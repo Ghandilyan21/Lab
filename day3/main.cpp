@@ -502,18 +502,18 @@
 
 //  bool parz(int n)
 //  {
-//	if (n <= 1)
-//	{
-//		return false;
-//	}for (int i = 2; i <= n / 2; ++i)
-//	{
-//		if (n % i == 0)
-//		{
-//			return false;
-//		}
-//	}
-//	return true;
-//}
+// 	if (n <= 1)
+// 	{
+// 		return false;
+// 	}for (int i = 2; i <= n / 2; ++i)
+// 	{
+// 		if (n % i == 0)
+// 		{
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
 // bool parz_r(int n, int div = 2)
 //{
 //	if (n <= 1)
@@ -904,3 +904,25 @@
 //     std::cout << check(86752209);
 //     return 0;
 // }
+
+//--------------find unique elemen by XOR
+
+// int main(int argc, char const *argv[])
+// {
+//     char str[] = "holeohkle";
+//     int i{0};
+//     char res = 0;
+//     while (str[i])
+//     {
+//         res ^= str[i];
+//         ++i;
+//     }
+//     std::cout << res;
+//     return 0;
+// }
+
+
+
+
+
+ 
