@@ -612,7 +612,7 @@
 // 		}
 // 		if(arr[mid] > target)
 // 		{
-// 			end = mid - 1;
+// 			end = mid - 1;  
 // 		}
 // 		else
 // 		{
@@ -925,4 +925,336 @@
 
 
 
- 
+
+
+
+
+//------------------------------------------------ Week 2------------------------------------------
+
+// -----------------------------------  day 1
+
+
+// Գրել ռեկուրսիվ ֆունկցիա, որը ստանում է n բնական թիվ և տպում է n-ից 0 թվերը։
+
+//void print_num_r(int n)
+//{
+//    if (n < 0)
+//    {
+//        return;
+//    }
+//    std::cout << "The num is : " << n << std::endl;
+//    print_num_r(n - 1);
+//}
+//int main()
+//{
+//    print_num_r(8);
+//    return 0;
+//}
+
+
+// Գրել ռեկուրսիվ ֆունկցիա, որը ստանում է n բնական թիվ և տպում է 0-ից n թվերը։
+
+/*void print_num_r(int n)
+{
+    if (n < 0)
+    {
+        return;
+    }
+    print_num_r(n - 1);
+    std::cout << "The num is : " << n << std::endl;
+}
+int main()
+{
+    print_num_r(8);
+    return 0;
+}*/
+
+
+//           Գրել ռեկուրսիվ ֆունկցիա, որը ստանում է ամբողջ թվային զանգված և տպում է զանգվածի էլեմենտները էկրանին։
+
+//void print_arr_r(int* arr, int size)
+//{
+//    if (size == 0) {
+//        return;
+//    }
+//    print_arr_r(arr, --size);
+//    std::cout << arr[size] << std::endl;
+//}
+//int main()
+//{
+//    int arr[7] = { 1,2,3,4,5,6,7 };
+//    print_arr_r(arr, 7);
+//}
+
+
+
+//  Իրականացնել ռեկուրսիվ ֆունկցիա, որն ընդունում է թիվ և վերադարձնում նրա թվանշանների գումարը:
+
+//int digits_sum_r(int n)
+//{
+//    if (n == 0)
+//    {
+//        return 0;
+//    }
+//    return n % 10 + digits_sum_r(n / 10);
+//}
+//
+//int main()
+//{
+//    std::cout << digits_sum_r(12345678);
+//}
+
+
+//          Իրականացնել ռեկուրսիվ ֆունկցիա, որը հաշվում է երկու թվերի ամենամեծ ընդհանուր բաժանարարը։
+
+//int divisor(int n1, int n2)
+//{
+//    if (n2 == 0)
+//    {
+//        return n1;
+//    }
+//    if (n1 == 0)
+//    {
+//        return n2;
+//    }
+//    return divisor(n2, n1 % n2);
+//}
+//
+//int main()
+//{
+//    std::cout << divisor(0, 27);
+//}
+
+
+//------------------------------------ Day 2
+
+//          Իրականացնել ռեկուրսիվ ֆունկցիա, որը ստանում է ամբողջ թվային պարամետր և վերադարձնում է n-րդ Ֆիբոնաչիի թիվը։  
+
+//int fib_r(int n)
+//{
+//    if (n <= 1)
+//    {
+//        return n;
+//    }
+//    return fib_r(n - 1) + fib_r(n - 2);
+//}
+//int main()
+//{
+//    std::cout << fib_r(5);
+//}
+
+//             Գրել տրված թվի ֆակտորիալը հաշվող ռեկուրսիվ ֆունկցիա։
+
+//int factorial_r(int n)
+//{
+//    if (n <= 1)
+//    {
+//        return 1;
+//    }
+//    return n * factorial_r(n - 1);
+//}
+//
+//int main()
+//{
+//    std::cout << factorial_r(-5);
+//}
+
+//int binary_search_r(int* arr, int left, int right, int target)
+//{
+//    if (left > right)
+//    {
+//        return -1;
+//    }
+//    if (arr[(right + left) / 2] == target)
+//    {
+//        return (right + left) / 2;
+//    }
+//    if (arr[(right + left) / 2] > target)
+//    {
+//        binary_search_r(arr, left, (right + left) / 2, target);
+//    }
+//    if (arr[(right + left) / 2] < target)
+//    {
+//        binary_search_r(arr, (right + left) / 2, right, target);
+//    }
+//}
+//
+//int main()
+//{
+//    int arr[6]{ 1,2,3,4,5,6 };
+//    std::cout << binary_search_r(arr, 0, 6, 4);
+//}
+
+//         Իրականացնել ռեկուրսիվ ֆունկցիա, որը ստանում է N թիվ և վերադարձնում այդ թվի երկուական համակարգում ներկայացումը։
+
+//int to_binary(int n)
+//{
+//    if (n <= 0)
+//    {
+//        return 0;
+//    }
+//    return (n % 2)  + 10 * to_binary(n / 2);
+//
+//}
+//int main()
+//{
+//    std::cout << to_binary(35);
+//}
+
+
+//      Իրականացնել ռեկուրսիվ ֆունկցիա, որը ստանում է թիվ և վերադարձնում թվի թվանշանների արտադրյալը։
+
+//int digits_mul_r(int n)
+//{
+//    if (n == 0)
+//    {
+//        return 1;
+//    }
+//    return n % 10 * digits_mul_r(n / 10);
+//}
+//
+//int main()
+//{
+//    std::cout << digits_mul_r(3425);
+//}
+
+
+
+//      Իրականացնել ռեկուրսիվ ֆունկցիա, որը կստանա տող և կվերադարձնի տողի երկարությունը։
+
+//int string_len_r(const char* str)
+//{
+//    if (*str == '\0')
+//    {
+//        return 0;
+//    }
+//    return 1 + string_len_r(str + 1);
+//}
+//
+//int main()
+//{
+//    std::cout << string_len_r("Barev Dzez");
+//}
+
+
+//       Իրականացնել ռեկուրսիվ ֆունկցիա, որը ստանում է տող և վերադարձնում տողում առաջին հանդիպած մեծատառը։
+
+//char first_upper_r(const char* str)
+//{
+//    if (*str == '\0' || *str >= 'A' && *str <= 'Z')
+//    {
+//        return *str;
+//    }
+//    return first_upper_r(str + 1);
+//}
+//
+//int main()
+//{
+//    std::cout << first_upper_r("barev dzez");
+//}
+
+
+
+//         Իրականացնել ռեկուրսիվ ֆունկցիա, որը ստանում է զանգված և վերադարձնում զանգվածի ամենափոքր (ամենամեծ) էլեմենտը։
+
+//int max(int n1, int n2)
+//{
+//    return (n1 > n2) ? n1 : n2;
+//}
+//int max_of_array_r(int* arr, int size)
+//{
+//    if (size == 0)
+//    {
+//        return 0;
+//    }
+//    return max(arr[size - 1], max_of_array_r(arr, size - 1));
+//}
+//
+//int main()
+//{
+//    int arr[7]{ 4,3,6,5,1,2,7 };
+//    std::cout << max_of_array_r(arr, 7);
+//}
+
+
+// Իրականացնել ֆունկցիա, որը կստանա MxN չափի մատրից և կվերադարձնի այն տարրի արժեքը, որը տողում ամենամեծն է, իսկ սյունում ամենափոքրը
+
+/*int max_of_row(int* arr, int n)
+{
+    int max_index = 0;
+    for (int i = 1; i < n; ++i)
+    {
+        if (arr[max_index] < arr[i])
+        {
+            max_index = i;
+        }
+    }
+    return max_index;
+}
+
+int check(int mat[][100], int h, int w)
+{
+    int max_index_row{};
+    int i_row{};
+    int i_col{};
+    for (int i = 0; i < h; ++i)
+    {
+        max_index_row = max_of_row(mat[i], w);
+        i_row = i;
+        for (int i = 0; i < h; ++i)
+        {
+            if (mat[i_col][max_index_row] > mat[i][max_index_row])
+            {
+                i_col = i;
+            }
+        }
+        if (mat[i_row][max_index_row] == mat[i_col][max_index_row])
+        {
+            return mat[i_row][max_index_row];
+        }
+    }
+    
+    return 0;
+}
+#include <cmath>
+int main()
+{
+    int mat[50][100];
+    int heigth{};
+    int width{};
+    int res{};
+    do{
+        std::cout << "Enter heigth : ";
+        std::cin >> heigth;
+        std::cout << "Enter width : ";
+        std::cin >> width;
+
+        srand(time(nullptr));
+        for (int i = 0; i < heigth; ++i)
+        {
+            for (int j = 0; j < width; ++j)
+            {
+                mat[i][j] = (rand() % 15) + 1;
+            }
+        }
+        for (int i = 0; i < heigth; ++i)
+        {
+            for (int j = 0; j < width; ++j)
+            {
+                std::cout << mat[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+        res = check(mat, heigth, width);
+        std::cout << res;
+        std::cout << std::endl;
+    } while (res == 0);
+}*/
+
+
+
+
+
+
+
