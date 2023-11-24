@@ -1213,7 +1213,7 @@ int check(int mat[][100], int h, int w)
             return mat[i_row][max_index_row];
         }
     }
-    
+
     return 0;
 }
 #include <cmath>
@@ -1265,7 +1265,7 @@ int main()
 //     {
 //         return;
 //     }
-    
+
 //     arr[tmp_i][tmp_j] = 0;
 //     xort(arr, h, l , tmp_i - 1, tmp_j);
 //     xort(arr, h, l , tmp_i + 1, tmp_j);
@@ -1285,7 +1285,7 @@ int main()
 //                 ++count;
 //                 xort(arr, h, l, i, j);
 //             }
-            
+
 //         }
 //     }
 //     return count;
@@ -1306,236 +1306,291 @@ int main()
 //     std::cout << count(mat, 8, 10);
 //     return 0;
 // }
-int count_r(char arr[][5], int h, int l, int tmp_i, int tmp_j)
-{
-    int count{};
-    if (tmp_i == 0 && tmp_j == 0)
-    {
-        if (arr[tmp_i + 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_i == 0 && tmp_j == l - 1)
-    {
-        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_i == h - 1 && tmp_j == 0)
-    {
-        if (arr[tmp_i - 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_i == h - 1 && tmp_j == l - 1)
-    {
-        if (arr[tmp_i][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_i == 0)
-    {
-        if (arr[tmp_i][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_i == h - 1)
-    {
-        if (arr[tmp_i][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_j == 0)
-    {
-        if (arr[tmp_i - 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-    }
-    else if (tmp_j == l - 1)
-    {
-        if (arr[tmp_i - 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-    }
-    else{
-        if (arr[tmp_i - 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
-        {
-            ++count;
-        }
-        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
-        {
-            ++count;
-        }
-    }
-    return count;
-}
+//int count_r(char arr[][5], int h, int l, int tmp_i, int tmp_j)
+//{
+//    int count{};
+//    if (tmp_i == 0 && tmp_j == 0)
+//    {
+//        if (arr[tmp_i + 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_i == 0 && tmp_j == l - 1)
+//    {
+//        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_i == h - 1 && tmp_j == 0)
+//    {
+//        if (arr[tmp_i - 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_i == h - 1 && tmp_j == l - 1)
+//    {
+//        if (arr[tmp_i][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_i == 0)
+//    {
+//        if (arr[tmp_i][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_i == h - 1)
+//    {
+//        if (arr[tmp_i][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_j == 0)
+//    {
+//        if (arr[tmp_i - 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else if (tmp_j == l - 1)
+//    {
+//        if (arr[tmp_i - 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    else {
+//        if (arr[tmp_i - 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+//        {
+//            ++count;
+//        }
+//        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+//        {
+//            ++count;
+//        }
+//    }
+//    return count;
+//}
+//
+//void change(char arr[][5], int h, int l)
+//{
+//    for (int i = 0; i < h; ++i)
+//    {
+//        for (int j = 0; j < l; ++j)
+//        {
+//            if (arr[i][j] == 0)
+//            {
+//
+//                arr[i][j] = (char)(count_r(arr, h, l, i, j) + '0');
+//            }
+//        }
+//
+//    }
+//
+//}
 
-void change(char arr[][5], int h, int l)
-{
-    for (int i = 0; i < h; ++i)
-    {
-        for (int j = 0; j < l; ++j)
-        {
-            if (arr[i][j] == 0)
-            {
-                
-                arr[i][j] = (char)(count_r(arr, h, l, i, j) + '0');
-            }
-        }
-        
-    }
-    
-}
 
-
-int main(int argc, char const *argv[])
-{
-    char mat[5][5]{ 0,'m',0,0,0,
-                    'm',0,'m',0,0,
-                    0,0,0,0,'m',
-                    0,'m','m',0,0,
-                    0,0,0,'m',0
-                    };
-    change(mat, 5,5);
-    for (int i = 0; i < 5; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
-            std::cout << mat[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-    return 0;
-}
-
+/*    Տրված է nxn չափի քառակուսային մատրից, որտեղ բոլոր տարրերը 0 - եր և  M - եր են։ Գրել ծրագիր, որը ստեղծում է նոր nxn չափի մատրից, որտեղ M - երը գտնվում են իրենց տեղերում, իսկ 0 - ների փոխարեն գրված է այդ 0 - ին հարևան M - երի քանակը(հորիզոնական, ուղղահայաց, անկյունագծային)
+    Օրինակ՝
+    0 M 0 M 0 	1 M 3 M 1
+    0 0 M 0 0   	1 2 M 2 1
+    0 0 0 0 0    	2 3 2 1 0
+    M M 0 0 0  	M M 2 1 1
+    0 0 0 M 0   	2 2 2 M 1
+*/
+//
+//int count_r(char arr[][5], int h, int l, int tmp_i, int tmp_j)
+//{
+//    if (tmp_i < 0 || tmp_i >= h)
+//    {
+//        return 0;
+//    }
+//    if (tmp_j < 0 || tmp_j >= l)
+//    {
+//        return 0; 
+//    }
+//    if (arr[tmp_i][tmp_j] != 'm' && arr[tmp_i][tmp_j] != 'n')
+//    {
+//        return 0;
+//    }
+//    if (arr[tmp_i][tmp_j] == 'm' )
+//    {
+//        return 1;
+//    }
+//    return count_r(arr, h, l, tmp_i - 1, tmp_j) + count_r(arr, h, l, tmp_i - 1, tmp_j + 1)
+//         + count_r(arr, h, l, tmp_i, tmp_j + 1) + count_r(arr, h, l, tmp_i + 1, tmp_j + 1) 
+//         + count_r(arr, h, l, tmp_i + 1, tmp_j) + count_r(arr, h, l, tmp_i + 1, tmp_j - 1)  
+//         + count_r(arr, h, l, tmp_i, tmp_j - 1) + count_r(arr, h, l, tmp_i - 1, tmp_j - 1);
+//}
+//
+//void change(char arr[][5], int h, int l, char new_arr[][5])
+//{
+//    for (int i = 0; i < h; i++)
+//    {
+//        for (int j = 0; j < l; j++)
+//        {
+//            if (arr[i][j] == 0)
+//            {
+//                arr[i][j] = 'n';
+//                arr[i][j] = (char)(count_r(arr, h, l, i, j) + '0');
+//                new_arr[i][j] = arr[i][j];
+//
+//            }
+//            else
+//            {
+//                new_arr[i][j] = arr[i][j];
+//            }
+//        }
+//    }
+//}
+//
+//int main(int argc, char const* argv[])
+//{
+//    char mat[5][5]{ 0,'m',0,0,0,
+//                    'm',0,'m',0,0,
+//                    0,0,0,0,'m',
+//                    0,'m','m',0,0,
+//                    0,0,0,'m',0
+//    };
+//    char new_mat[5][5];
+//    change(mat, 5, 5, new_mat);
+//
+//    for (int i = 0; i < 5; ++i)
+//    {
+//        for (int j = 0; j < 5; ++j)
+//        {
+//            std::cout << new_mat[i][j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//    return 0;
+//}
 
 
 
