@@ -1251,8 +1251,290 @@ int main()
         std::cout << std::endl;
     } while (res == 0);
 }*/
+// void xort(int arr[][10], int h, int l, int tmp_i, int tmp_j)
+// {
+//     if (tmp_i < 0 || tmp_i >= h)
+//     {
+//         return;
+//     }
+//     if (tmp_j < 0 || tmp_j >= l)
+//     {
+//         return;
+//     }
+//     if (arr[tmp_i][tmp_j] == 0)
+//     {
+//         return;
+//     }
+    
+//     arr[tmp_i][tmp_j] = 0;
+//     xort(arr, h, l , tmp_i - 1, tmp_j);
+//     xort(arr, h, l , tmp_i + 1, tmp_j);
+//     xort(arr, h, l , tmp_i, tmp_j - 1);
+//     xort(arr, h, l , tmp_i, tmp_j + 1);
+// }
+
+// int count(int arr[][10], int h, int l)
+// {
+//     int count{};
+//     for (int i = 0; i < h; ++i)
+//     {
+//         for (int j = 0; j < l; ++j)
+//         {
+//             if (arr[i][j] == 1)
+//             {
+//                 ++count;
+//                 xort(arr, h, l, i, j);
+//             }
+            
+//         }
+//     }
+//     return count;
+// }
 
 
+// int main(int argc, char const *argv[])
+// {
+//     int mat[8][10]{ 0,0,1,1,0,0,1,1,1,0,
+//                     0,0,1,0,1,1,1,0,0,1,
+//                     1,0,0,0,1,1,0,0,1,1,
+//                     1,0,1,1,0,0,1,1,1,0,
+//                     1,1,0,1,1,0,0,1,1,1,
+//                     0,0,1,1,0,0,1,1,0,1,
+//                     1,0,0,1,1,0,1,1,1,0,
+//                     0,0,1,0,0,0,0,1,0,1
+//                     };
+//     std::cout << count(mat, 8, 10);
+//     return 0;
+// }
+int count_r(char arr[][5], int h, int l, int tmp_i, int tmp_j)
+{
+    int count{};
+    if (tmp_i == 0 && tmp_j == 0)
+    {
+        if (arr[tmp_i + 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_i == 0 && tmp_j == l - 1)
+    {
+        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_i == h - 1 && tmp_j == 0)
+    {
+        if (arr[tmp_i - 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_i == h - 1 && tmp_j == l - 1)
+    {
+        if (arr[tmp_i][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_i == 0)
+    {
+        if (arr[tmp_i][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_i == h - 1)
+    {
+        if (arr[tmp_i][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_j == 0)
+    {
+        if (arr[tmp_i - 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+    }
+    else if (tmp_j == l - 1)
+    {
+        if (arr[tmp_i - 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+    }
+    else{
+        if (arr[tmp_i - 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i - 1][tmp_j + 1] == 'm')
+        {
+            ++count;
+        }
+        if (arr[tmp_i + 1][tmp_j - 1] == 'm')
+        {
+            ++count;
+        }
+    }
+    return count;
+}
+
+void change(char arr[][5], int h, int l)
+{
+    for (int i = 0; i < h; ++i)
+    {
+        for (int j = 0; j < l; ++j)
+        {
+            if (arr[i][j] == 0)
+            {
+                
+                arr[i][j] = (char)(count_r(arr, h, l, i, j) + '0');
+            }
+        }
+        
+    }
+    
+}
+
+
+int main(int argc, char const *argv[])
+{
+    char mat[5][5]{ 0,'m',0,0,0,
+                    'm',0,'m',0,0,
+                    0,0,0,0,'m',
+                    0,'m','m',0,0,
+                    0,0,0,'m',0
+                    };
+    change(mat, 5,5);
+    for (int i = 0; i < 5; ++i)
+    {
+        for (int j = 0; j < 5; ++j)
+        {
+            std::cout << mat[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    return 0;
+}
 
 
 
