@@ -1593,5 +1593,62 @@ int main()
 //}
 
 
+//Իրականացնել հաշվիչ ծրագիր, որն օգտագործում է std::map և ֆունկցիայի ցուցիչներ։ Ֆունկցիայի ցուցիչները հղվում են համապատասխան թվաբանական գործողությունը կատարող ֆունկցիայի վրա։
+
+//#include <map>
+//
+//int sum(int a, int b);
+//int sub(int a, int b);
+//int mul(int a, int b);
+//int div_(int a, int b);
+//int mod(int a, int b);
+//
+//int main()
+//{
+//	std::map<char, int(*)(int, int)> op;
+//	op['+'] = sum;
+//	op['-'] = sub;
+//	op['/'] = div_;
+//	op['*'] = mul;
+//	op['%'] = mod;
+//
+//	int a{};
+//	int b{};
+//	char ch{};
+//	std::cout << "Enter first number : ";
+//	std::cin >> a;
+//	do
+//	{
+//		std::cout << "Enter operatin (+,-,/,*,%) : ";
+//		std::cin >> ch;
+//	} while (ch != '+' && ch != '-' && ch != '/' && ch != '*' && ch != '%');
+//	std::cout << "Enter second number : ";
+//	std::cin >> b;
+//	std::cout << op[ch](a, b);
+//}
+//
+//int sum(int a, int b)
+//{
+//	return a + b;
+//}
+//int sub(int a, int b)
+//{
+//	return a - b;
+//}
+//int div_(int a, int b)
+//{
+//	return a / b;
+//}
+//int mul(int a, int b)
+//{
+//	return a * b;
+//}
+//int mod(int a, int b)
+//{
+//	return a % b;
+//}
+//
+
+
 
 
