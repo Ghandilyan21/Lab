@@ -1649,6 +1649,85 @@ int main()
 //}
 //
 
+//----------------------- string functions -------------------------------------------
+
+// size_t str_len(const char* ptr)
+// {
+// 	int count{};
+// 	while (ptr[count])
+// 	{
+// 		++count;
+// 	}
+// 	return count;
+// }
+
+// char* strchr(const char* ptr, const char c)
+// {
+// 	if (*ptr == c || *ptr == '\0')
+// 	{
+// 		return (char*)ptr;
+// 	}
+// 	return strchr(ptr + 1, c);
+// }
+
+// int strcmp(const char* s1, const char* s2) 
+// {
+// 	int c1{};
+// 	int c2{};
+// 	while (s1[c1])
+// 	{
+// 		++c1;
+// 	}
+// 	while (s2[c2])
+// 	{
+// 		++c2;
+// 	}
+// 	if (c1 > c2)
+// 	{
+// 		return s1[c2] - s2[c2];
+// 	}
+// 	if (c1 < c2)
+// 	{
+// 		return s1[c1] - s2[c1]; 
+// 	}
+// 	for (int i = 0; i < c1; ++i)
+// 	{
+// 		if (s1[i] - s2[i])
+// 		{
+// 			return s1[i] - s2[i];
+// 		}
+// 	}
+// 	return 0;
+// }
+
+// char* str_str(const char* s1, const char* s2)
+// {
+// 	size_t c1 = str_len(s1);
+// 	size_t c2 = str_len(s2);
+// 	if (c1 < c2)
+// 	{
+// 		return (char*)(s1 + c1);
+// 	}
+// 	bool f;
+// 	while (*s1)
+// 	{
+// 		f = true;
+// 		char* occur = strchr(s1, *s2);
+// 		for (size_t i = 0; i < c2; ++i)
+// 		{
+// 			if (occur[i] != s2[i])
+// 			{
+// 				f = false;
+// 				s1 = occur + 1;
+// 				break;
+// 			}
+// 		}
+// 		if (f)
+// 		{
+// 			return occur;
+// 		}
+// 	}
+// 	return (char*)(s1 + c1);
 
 
 
