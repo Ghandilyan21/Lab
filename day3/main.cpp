@@ -1729,5 +1729,190 @@ int main()
 // 	}
 // 	return (char*)(s1 + c1);
 
+//bool is_valid(int a, int b, int c);
+//
+//int main()
+//{
+//	std::cout << std::boolalpha << is_valid(3, 5, 4);
+//}
+//
+//long square(int n)
+//{
+//	return n * n;
+//}
+//
+//bool is_valid(int a, int b, int c)
+//{
+//	if (square(a) + square(b) == square(c))
+//	{
+//		return true;
+//	}
+//	if (square(a) + square(c) == square(b))
+//	{
+//		return true;
+//	}
+//	if (square(b) + square(c) == square(a))
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+
+// ------- erankyunachapakan funkcianer
+
+//double sin(double a, double b);
+//double cos(double a, double b);
+//double tan(double a, double b);
+//double ctg(double a, double b);
+//double nerq(double a, double b);
+//#include <cmath>
+
+//int main()
+//{
+//	std::cout << sin(3, 4);
+//}
+//long pow(int a)
+//{
+//	return	a * a; 
+//}
+//
+//double nerq(double a, double b)
+//{
+//	return sqrt(pow(a) + pow(b)); 
+//}
+//double sin(double a, double b)
+//{
+//	return a / nerq(a,b);
+//}
+//double cos(double a, double b)
+//{
+//	return b / nerq(a, b);
+//}
+//double tan(double a, double b)
+//{
+//	return a / b;
+//}
+//double ctg(double a, double b)
+//{
+//	return b / a;
+//
+// }
+
+//  --------------------------- verjavor gumari banadzev
+
+//long pow(int n, int deg);
+//long fak(int n);
+//double formula(int x, int n);
+//
+//int main()
+//{
+//	std::cout << formula(3, 3);
+//}
+//
+//long pow(int n, int deg)
+//{
+//	long res{1};
+//	for (size_t i = 0; i < deg; ++i)
+//	{
+//		res *= n;
+//	}
+//	return res;
+//}
+//
+//long fak(int n)
+//{
+//	int fak{1};
+//	for (size_t i = 1; i <= n; ++i)
+//	{
+//		fak *= i;
+//	}
+//	return fak;
+//}
+//
+//double formula(int x, int n)
+//{
+//	double res{};
+//	for (size_t i = 1; i <= n; ++i)
+//	{
+//		res += (i % 2) ? -1 * (pow(x, i + 1) / (fak(3 * i) + pow(2, i + 1))) : (pow(x, i + 1) / (fak(3 * i) + pow(2, i + 1)));
+//	} 
+//	return res;
+//}
+
+// -------------- kataryal tiv --------------------------
+//int baj(int n);
+//bool valid(int n);
+//void milion();
+//
+//int main()
+//{
+//	milion();
+//}
+//
+//int baj(int n)
+//{
+//	int sum{};
+//	for (size_t i = 1; i <= n / 2; ++i)
+//	{
+//		if (n % i == 0)
+//		{
+//			sum += i;
+//		}
+//	}
+//	return sum;
+//}
+//
+//bool valid(int n)
+//{
+//	return n == baj(n);
+//}
+//
+//void milion()
+//{
+//	for (size_t i = 1; i < 1000000000; ++i)
+//	{
+//		if (valid(i))
+//		{
+//			std::cout << i << " ";
+//		}
+//	}
+//}
 
 
+
+// ------------------- N-rd parz tivy
+
+//bool is_prime(int n)
+//{
+//	if (n < 2)
+//	{
+//		return false;
+//	}
+//	for (size_t i = 2; i <= n / 2; ++i)
+//	{
+//		if ((n & 1) == 0) {
+//			return false;
+//		}
+//	}
+//	return true;
+//}
+//
+//long n_prime(int n)
+//{
+//	int count{};
+//	for (size_t i = 2;; ++i)
+//	{
+//		if (is_prime(i))
+//		{
+//			++count;
+//		}
+//		if (count == n)
+//		{
+//			return i;
+//		}
+//	}
+//}
+//int main()
+//{
+//	std::cout << n_prime(4);
+//}
