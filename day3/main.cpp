@@ -1916,3 +1916,46 @@ int main()
 //{
 //	std::cout << n_prime(4);
 //}
+
+// ----------------------- sqrt 
+
+//double sqrt_(int a)
+//{
+//	double x = 1.0;
+//	for (size_t i = 0; i < 10; ++i)
+//	{
+//		x = (x + a / x) / 2;
+//	}
+//	return x;
+//}
+
+// ------------------------ ln and log
+
+//long pow(int n, int p)
+//{
+//	long res{ 1 };
+//	for (size_t i = 0; i < p; ++i)
+//	{
+//		res *= n;
+//	}
+//	return res;
+//}
+//
+//double ln(double x)
+//{
+//	double res{};
+//	if (x <= 0)
+//	{
+//		throw std::invalid_argument("");
+//	}
+//	for (size_t i = 1; i <= 50; ++i)
+//	{
+//		res += pow((x - 1) / (x + 1), 2 * i - 1) / (2 * i - 1);
+//	}	
+//	return 2 * res;
+//}
+//
+//double log(double a, double b)
+//{
+//	return ln(b) / ln(a);
+//}
