@@ -1959,3 +1959,77 @@ int main()
 //{
 //	return ln(b) / ln(a);
 //}
+
+// -------------------  Heroni banadzev 
+// Մուտքագրել երեք բնական թվեր՝ a, b և c։ Հաշվել այդ կողմերով եռանկյան մակերեսը Հերոնի բանաձևով։
+
+//double sqrt_(int a) 
+//{
+//	double x = 1.0;
+//	for (size_t i = 0; i < 10; ++i)
+//	{
+//		x = (x + a / x) / 2;
+//	}
+//	return x;
+//}
+//
+//long area_heron(int a, int b, int c)
+//{
+//	int p = (a + b + c) / 2;
+//	return sqrt_(p * ((p - a) + (p - b) + (p - c)));
+//}
+
+//  Նկարագրել բուլյան ֆունկցիա, որն արգումենտում ստանում է երեք իրական թիվ և վերադարձնում է false, եթե գոյություն չունի տրված կողմերով եռանկյուն: Հակառակ դեպքում վերադարձնում է true և վերադարձնում է նաև այդ եռանկյան մակերեսը:
+
+//double sqrt_(int a) 
+//{
+//	double x = 1.0;
+//	for (size_t i = 0; i < 10; ++i)
+//	{
+//		x = (x + a / x) / 2;
+//	}
+//	return x;
+//}
+//
+//double area_heron(int a, int b, int c)
+//{
+//	int p = (a + b + c) / 2;
+//	return sqrt_(p * ((p - a) + (p - b) + (p - c)));
+//}
+//
+//bool exist_triangle(int a, int b, int c)
+//{
+//	if (a + b > c && a + c > b && b + c > a)
+//	{
+//		std::cout << area_heron(a, b, c) << std::endl;
+//		return true;
+//	}
+//	return false;
+//}
+
+// Տրված n դրական ամբողջ թվի համար արտածել 2-ի ամենամեծ աստիճանը, որը չի գերազանցում n-ը։
+
+//double ln(double x)
+//{
+//	double res{};
+//	if (x <= 0)
+//	{
+//		throw std::invalid_argument("");
+//	}
+//	for (size_t i = 1; i <= 10000; ++i)
+//	{
+//		res += pow((x - 1) / (x + 1), 2 * i - 1) / (2 * i - 1);
+//	}	
+//	return 2 * res;
+//}
+//
+//double log(double a, double b)
+//{
+//	return ln(b) / ln(a);
+//}
+//
+//int max_power(int a)
+//{
+//	return log(2, a);
+//}
+
