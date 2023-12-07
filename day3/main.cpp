@@ -2033,3 +2033,282 @@ int main()
 //	return log(2, a);
 //}
 
+
+// ---------------------------------------------------------- hanrahashvakan vector
+
+//Մուտքագրել  2 թիվ` n, k և n-չափանի վեկտոր՝ V։ Բազմապատկել տրված վեկտորը k թվով։
+
+// void mul_vec(int* vec, int n, int k);
+// void init(int* vec, int n);
+// void print(int* vec, int n);
+
+// int main()
+// {
+//     int n{};
+//     int k{};
+//     int v[50]{};
+//     std::cout << "Enter the N : ";
+//     std::cin >> n;
+//     std::cout << "Enter the K : ";
+//     std::cin >> k;
+//     init(v, n);
+//     print(v, n); 
+//     mul_vec(v, n, k);
+//     print(v, n);
+//     return 0;
+// }
+// void init(int* vec, int n)
+// {
+//     for (size_t i = 0; i < n; ++i)
+//     {
+//         std::cout << "Enter the " << i + 1 << " element : ";
+//         std::cin >> vec[i];
+//     }
+// }
+// void mul_vec(int* vec, int n, int k)
+// {
+//     for (size_t i = 0; i < n; ++i)
+//     {
+//         vec[i] *= k;
+//     }
+// }
+// void print(int* vec, int n)
+// {
+//     for (size_t i = 0; i < n; ++i)
+//     {
+//         std::cout << vec[i] << " ";
+//     }
+//     std::cout << std::endl;
+// }
+
+// Մուտքագրել n թիվ և n-չափանի 2 վեկտորներ՝ V1, V2։ Հաշվել այդ վեկտորների գումարը՝ V1 + V2:
+
+void init(int* vec, int n);
+//void print(int* vec, int n);
+//void add_vec(int* v, int* v1, int n);
+//
+//int main()
+//{
+//    int n{};
+//    int v[50]{};
+//    int v1[50]{};
+//    std::cout << "Enter the N : ";
+//    std::cin >> n;
+//    init(v, n);
+//    init(v1, n);
+//    add_vec(v, v1, n);
+//    print(v, n); 
+//    print(v1, n);
+//    return 0;
+//}
+//void init(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << "Enter the " << i + 1 << " element : ";
+//        std::cin >> vec[i];
+//    }
+//}
+//void add_vec(int* v,int* v1, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        v1[i] += v[i];
+//    }
+//}
+//void print(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << vec[i] << " ";
+//    }
+//    std::cout << std::endl;
+//}
+//
+
+
+//  Մուտքագրել n թիվ և n-չափանի 2 վեկտորներ՝ V1, V2։ Հաշվել այդ վեկտորների սկալյար արտադրյալը՝ V1 * V2:
+
+//void init(int* vec, int n);
+//void print(int* vec, int n);
+//int scalar(int* v, int* v1, int n); 
+//
+//int main()
+//{   
+//    int n{};
+//    int v[50]{};
+//    int v1[50]{};
+//    std::cout << "Enter the N : ";
+//    std::cin >> n;
+//    init(v, n);
+//    init(v1, n); 
+//    std::cout << scalar(v, v1, n);
+//    
+//    return 0;
+//}
+//void init(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << "Enter the " << i + 1 << " element : ";
+//        std::cin >> vec[i];
+//    }
+//}
+//int scalar(int* v,int* v1, int n)
+//{
+//    int res{};
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        res += v[i] * v1[i];
+//    }
+//    return res;
+//}
+//void print(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << vec[i] << " ";
+//    }
+//    std::cout << std::endl;
+//}
+//
+
+
+//  Մուտքագրել n թիվ, և n չափանի V  վեկտոր։ Հաշվել տրված վեկտորի երկարությունը։
+
+//void init(int* vec, int n);
+//void print(int* vec, int n);
+//double sqrt_(double n);
+//int vec_len(int* v, int n); 
+//
+//int main()
+//{   
+//    int n{};
+//    int v[50]{};
+//    std::cout << "Enter the N : ";
+//    std::cin >> n;
+//    init(v, n);
+//    std::cout << vec_len(v, n);
+//    return 0;
+//}
+//void init(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << "Enter the " << i + 1 << " element : ";
+//        std::cin >> vec[i];
+//    }
+//}
+//int vec_len(int* v, int n)
+//{
+//    int res{};
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        res += v[i] * v[i];
+//    }
+//    return sqrt_(res);
+//}
+//void print(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << vec[i] << " ";
+//    }
+//    std::cout << std::endl;
+//}
+//double sqrt_(double n)
+//{
+//    double x = 1.0;
+//    for (size_t i = 0; i < 10; ++i)
+//    {
+//        x = (x + n / x) / 2;
+//    }
+//    return x;
+//}
+//
+
+
+//Մուտքագրել n թիվ և n-չափանի 2 վեկտորներ՝ V1, V2։ Գտնել այդ վեկտորների կազմած անկյան կոսինուսը։
+
+//void init(int* vec, int n);
+//void print(int* vec, int n);
+//double sqrt_(double n);
+//int vec_len(int* v, int n); 
+//int scalar(int* v, int* v1, int n); 
+//double cos_vec(int* v1, int* v2, int n);
+//
+//int main()
+//{   
+//    int n{};
+//    int v1[50]{};
+//    int v2[50]{};
+//    std::cout << "Enter the N : ";
+//    std::cin >> n;
+//    init(v1, n);
+//    init(v2, n);  
+//    std::cout << cos_vec(v1,v2,n);
+//    return 0;
+//}
+//void init(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << "Enter the " << i + 1 << " element : ";
+//        std::cin >> vec[i];
+//    }
+//}
+//int vec_len(int* v, int n)
+//{
+//    int res{};
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        res += v[i] * v[i];
+//    }
+//    return sqrt_(res);
+//}
+//void print(int* vec, int n)
+//{
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        std::cout << vec[i] << " ";
+//    }
+//    std::cout << std::endl;
+//}
+//double sqrt_(double n)
+//{
+//    double x = 1.0;
+//    for (size_t i = 0; i < 10; ++i)
+//    {
+//        x = (x + n / x) / 2;
+//    }
+//    return x;
+//}
+//int scalar(int* v,int* v1, int n)
+//{
+//    int res{};
+//    for (size_t i = 0; i < n; ++i)
+//    {
+//        res += v[i] * v1[i];
+//    }
+//    return res;
+//}
+//
+//double cos_vec(int* v1, int* v2, int n)
+//{
+//    return (double)scalar(v1, v2, n) / vec_len(v1, n) * vec_len(v2, n);
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
