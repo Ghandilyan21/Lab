@@ -2394,6 +2394,65 @@ void init(int* vec, int n);
 //}
 
 
+//Տրված բնական թվերի քառակուսային մատրիցի համար արտածել YES, եթե այն մոգական քառակուսի է. նրա բոլոր տողերի, սյուների, գլխավոր ու երկրոդական անկյունագծերի համար տարրերի գումարը նույնն թիվն է,
+
+//bool magic_mat(int mat[50][50], const int size);
+//void init(int mat[][50], int size);
+//void print(int mat[][50], int size);
+//
+//int main()
+//{
+//	int mat[50][50];
+//	init(mat, 3);
+//	std::cout << std::boolalpha << magic_mat(mat, 3);
+//    return 0;
+//}
+//
+//bool magic_mat(int mat[50][50], const int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		int row{};
+//		int column{};
+//		int glx{};
+//		int erk{};
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			row += mat[i][j];
+//			column += mat[j][i];
+//			glx += mat[j][j];
+//			erk += mat[size - j - 1][size - j - 1];
+//		}
+//		if (!(row == column && column == glx && glx == erk))
+//		{
+//			return false;
+//		}
+//	}
+//	return true;
+//}
+//void init(int mat[][50], int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			std::cin >> mat[i][j];
+//		}
+//	}
+//}
+//
+//void print(int mat[][50], int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			std::cout << mat[i][j] << " ";
+//		}
+//		std::cout << std::endl;
+//	}
+//}
+
 
 
 
