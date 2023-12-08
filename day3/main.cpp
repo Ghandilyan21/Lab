@@ -2298,7 +2298,100 @@ void init(int* vec, int n);
 //    return (double)scalar(v1, v2, n) / vec_len(v1, n) * vec_len(v2, n);
 //}
 
+//Տրված է NxN չափանի քառակուսային մատրից։ Ստուգել արդյոք տրված մատրիցը սիմետրիկ է թե ոչ։
 
+//void init(int mat[][50], int size);
+//bool sim_mat(int mat[][50], int size);
+//int main()
+//{
+//	int mat[50][50];
+//	int size{};
+//	std::cout << "Enter the size : ";
+//	std::cin >> size;
+//	init(mat, size);
+//	std::cout << std::boolalpha << sim_mat(mat, size);
+//	return 0;
+//}
+//void init(int mat[][50], int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			std::cin >> mat[i][j];
+//		}
+//	}
+//}
+//
+//bool sim_mat(int mat[][50], int size)
+//{
+//	for (size_t i = 0; i < size - 1; ++i)
+//	{
+//		for (size_t j = 1 + i; j < size; j++)
+//		{
+//			if (mat[i][j] != mat[j][i])
+//			{
+//				return false;
+//			}
+//		}
+//	}
+//	return true;
+//}
+
+
+// ----------------------- add two matrix
+
+//void init(int mat[][50], int size);
+//void add_mat(int mat[][50], int mat1[][50], int size);
+//void print(int mat[][50], int size);
+//
+//int main()
+//{
+//	int mat[50][50];
+//	int mat1[50][50];
+//	int size{};
+//	std::cout << "Enter the size : ";
+//	std::cin >> size;
+//	init(mat, size);
+//	init(mat1, size);
+//	print(mat, size);
+//	print(mat1, size);
+//	add_mat(mat, mat1, size);
+//	print(mat, size);
+//	return 0;
+//}
+//void init(int mat[][50], int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			std::cin >> mat[i][j];
+//		}
+//	}
+//}
+//
+//void print(int mat[][50], int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			std::cout << mat[i][j] << " ";
+//		}
+//		std::cout << std::endl;
+//	}
+//}
+//void add_mat(int mat[][50], int mat1[][50], int size)
+//{
+//	for (size_t i = 0; i < size; ++i)
+//	{
+//		for (size_t j = 0; j < size; ++j)
+//		{
+//			mat[i][j] += mat1[i][j];
+//		}
+//	}
+//}
 
 
 
