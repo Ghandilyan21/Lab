@@ -2454,6 +2454,35 @@ void init(int* vec, int n);
 //}
 
 
+//------------------------------------------------------ N-ic poqr ev N-i het poxadarcabar parz tveri qanak
+
+
+//bool check(int n, int i) 
+//{
+//	for (size_t j = 2; j < n; ++j)
+//	{
+//		if (i % j == 0 && n % j == 0)
+//		{
+//			return false;
+//		}
+//	}
+//	return true;
+//}
+//
+//void foo(int n)
+//{
+//	int count{};
+//	for (size_t i = 2; i < n; ++i)
+//	{
+//		if (n % i != 0 && check(n ,i))
+//		{
+//			++count;
+//		}
+//	}
+//	std::cout << count;
+//}
+
+
 
 
 
