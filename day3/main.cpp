@@ -2421,7 +2421,7 @@ void init(int* vec, int n);
 //			row += mat[i][j];
 //			column += mat[j][i];
 //			glx += mat[j][j];
-//			erk += mat[size - j - 1][size - j - 1];
+//			erk += mat[j][size - j - 1];
 //		}
 //		if (!(row == column && column == glx && glx == erk))
 //		{
