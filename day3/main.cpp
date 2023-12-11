@@ -2567,6 +2567,22 @@ void init(int* vec, int n);
 //     return 0;
 // }
 
+// kammmmmm
+
+// int& foo(int& x)
+// {
+//     return x;
+// }
+
+// int main()
+// {
+//     int x = 10;
+//     std::cout << x << std::endl;
+//     (foo(x)) = 11;
+//     std::cout << x << std::endl;
+//     return 0;
+// }
+
 
 
 
