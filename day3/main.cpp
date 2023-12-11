@@ -2483,8 +2483,89 @@ void init(int* vec, int n);
 //}
 
 
+// tvi erkuakan hamakargum mekeri qanaky
 
 
+//int one_bit_count(int n)
+//{
+//    int res{};
+//    while (n)
+//    {
+//        if (n & 1)
+//        {
+//            ++res;
+//        }
+//        n >>= 1;
+//    }
+//    return res;
+//}
+
+// kammmm
+
+
+// bool one_bit_count(int n)
+// {
+//     int res{};
+//     int end = sizeof(n) * 8;
+//     for (size_t i = 0; i < end; ++i)
+//     {
+//         if (n & 1)
+//         {
+//             ++res;
+//         }
+//         n >>= 1;
+//     }
+    
+//     return !(res % 2);
+// }
+
+
+// kammmmmm
+
+//bool one_bit_count(int n)
+//{
+//    bool res{1};
+//    int end = sizeof(n) * 8;
+//    for (size_t i = 0; i < end; ++i)
+//    {
+//        res ^= (n & 1);
+//        n >>= 1;
+//    }
+//    
+//    return res;
+//}
+
+
+// ---------------------------- nuyny recoursive
+
+
+//bool one_bit_count_r(int n)
+//{
+//    if (n == 0)
+//    {
+//        return true;
+//    }
+//    return (n & 1) ^ one_bit_count_r( n >> 1);
+//}
+
+
+
+// setter getter mek funkciayov
+
+// int** foo()
+// {
+//     int* p;
+//     return &p;
+// }
+
+// int main()
+// {
+//     int x = 10;
+//     std::cout << x <<std::endl;
+//     *(*foo() = &x) = 18;
+//     std::cout << *(*foo() = &x) << std::endl;
+//     return 0;
+// }
 
 
 
