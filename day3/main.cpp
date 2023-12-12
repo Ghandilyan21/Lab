@@ -2584,6 +2584,44 @@ void init(int* vec, int n);
 // }
 
 
+// bitwise   swap
+
+// void swap(int& n, int i, int j)
+//  {
+//      int k = sizeof(n) * 8;
+//      if (i == j || (i > k && i < 0) || (j > k && j < 0))
+//      {
+//          return;
+//      }
+    
+//      bool i_val = ((n >> i) & 1);
+//      bool j_val = ((n >> j) & 1);
+//      if (i_val != j_val)
+//      {
+//          n ^= (1 << i);
+//          n ^= (1 << j);
+//      }
+//  }*/
+
+
+// nuyny I-ic minchev J indexy poxum a
+
+ //void swap_bits(int& n, int ix, int jx)
+ //{
+        // int k = sizeof(n) * 8;
+        // if (ix == jx || (ix > k && ix < 0) || (jx > k && jx < 0))
+        // {
+        //     return;
+        // }
+ //    while (ix < jx)
+ //    {
+ //        swap(n, ix, jx);
+ //        ++ix;
+ //        --jx;
+ //    }
+ //}
+
+
 
 
 
