@@ -2622,6 +2622,20 @@ void init(int* vec, int n);
  //}
 
 
+// bitwise adder 
+
+ //int adder(int n, int m)
+ //{                                
+ //    while (m)
+ //    {
+ //        int carry = (n & m);
+ //        n ^= m;
+ //        m = (carry << 1);
+ //    }
+ //    return n;
+ //}
+
+
 
 
 
