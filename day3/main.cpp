@@ -2655,7 +2655,119 @@ void init(int* vec, int n);
 //  }
 
 
+// -------------------------------------- Sorting algorithms
 
+/*
+void insertion_sort(int* arr, int s)
+ {
+	 for (int i = 1; i < s - 1; ++i)
+	 {
+		 int tmp = arr[i];
+		 int j = i;
+		 while (j > 0 && arr[j  -1] > tmp)
+		 {
+			 arr[j] = arr[j - 1];
+			 --j;
+		 }
+		 arr[j] = tmp;
+	 }
+ }
+
+ void selection_sort(int* arr, int s)
+ {
+	 for (int i = 0; i < s - 1; ++i)
+	 {
+		 int ix = i;
+		 for (int j = i + 1; j < s; ++j)
+		 {
+			 if (arr[j] < arr[ix])
+			 {
+				 ix = j;
+			 }
+		 }
+		 std::swap(arr[ix], arr[i]);
+	 }
+ }
+
+ int partitionn(int* arr, int start, int end) { 
+	 int pivot = arr[end]; 
+	 int i = start;
+	 int j = end - 1; 
+	 while (i <= j) { 
+		 while (arr[i] < pivot) { 
+			 ++i; 
+		 }
+		 while (arr[j] >= pivot) { 
+			 --j; 
+		 } 
+		 if (i < j) { 
+			 std::swap(arr[i], arr[j]); 
+		 } 
+	 }
+	 std::swap(arr[i], arr[end]); 
+	 return i; 
+ } 
+
+ void quick_sort(int* arr, int l, int h)
+ {
+	 if (l < h)
+	 {
+		 int pivot_ix = partitionn(arr, l, h);
+		 quick_sort(arr, l, pivot_ix - 1);
+		 quick_sort(arr, pivot_ix + 1, h);
+	 }
+ }
+
+ void buble_sort(int* arr, int s)
+ {
+	 bool f;
+	 for (int i = 0; i < s; ++i)
+	 {	
+		 f = true;
+		 for (int j = 0; j < s - 1 - i; ++j)
+		 {
+			 if (arr[j + 1] < arr[j])
+			 {
+				 std::swap(arr[j], arr[j + 1]);
+				 f = false;
+			 }
+		 }
+		 if (f)
+		 {
+			 break;
+		 }
+	 }
+ }*/
+// ---------------- kammmm
+
+// int partitionn(int* arr, int start, int end) { 
+//  int pivot = arr[end]; 
+//  int i = start;
+//  int j = end - 1; 
+//  while (i <= j) { 
+// 	 while (arr[i] < pivot) { 
+// 		 ++i; 
+// 	 }
+// 	 while (arr[j] >= pivot) { 
+// 		 --j; 
+// 	 } 
+// 	 if (i < j) { 
+// 		 std::swap(arr[i], arr[j]); 
+// 	 } 
+//  }
+//  std::swap(arr[i], arr[end]); 
+//  return i; 
+// } 
+
+// void quick_sort(int* arr, int l, int h)
+// {
+//  if (l < h)
+//  {
+// 	 int pivot_ix = partitionn(arr, l, h);
+// 	 quick_sort(arr, l, pivot_ix - 1);
+// 	 quick_sort(arr, pivot_ix + 1, h);
+//  }
+// }
 
 
 
