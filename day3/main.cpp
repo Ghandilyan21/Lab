@@ -2770,5 +2770,45 @@ void insertion_sort(int* arr, int s)
 // }
 
 
+// Իրականացնել ծրագիր, որը ստանում է ֆայլ և սեղմում է (compress) ֆայլի պարունակությունը օգտագործելով RLE - Run-Length Encoding ալգորիթմը։
+
+//#include <fstream>
+//#include <string>
+//
+//int main()
+//{
+//	std::string input;
+//	std::cout << "Enter the input file name : ";
+//	std::cin >> input;
+//	std::ifstream fin(input);
+//	std::ofstream fout("t.txt");
+//	std::string buf; 
+//	
+//	while (std::getline(fin, buf))
+//	{
+//		int count{ 1 };
+//		for (size_t i = 0; i < buf.size() - 1; ++i)
+//		{
+//			if (buf[i] == ' ')
+//			{
+//				fout << buf[i];
+//				continue;
+//			}
+//			if (buf[i] == buf[i + 1])
+//			{
+//				++count;
+//				continue;
+//			}
+//		    fout << count << buf[i];		
+//			count = 1;
+//		}
+//		fout << count << buf[buf.size() - 1];
+//		
+//		fout << std::endl;
+//	}
+//	fin.close();
+//	fout.close();
+//}
+
 
 
