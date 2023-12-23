@@ -2811,4 +2811,33 @@ void insertion_sort(int* arr, int s)
 //}
 
 
+// ---------------------------------------- find substring 
+
+//int foo(std::string s1, std::string s2)
+//{
+//	int len = s1.size() - s2.size() + 1;
+//	
+//	for (int i = 0; i < len; ++i)
+//	{
+//		int j = 0;
+//		bool f = true;
+//		if (s1[i] == s2[j])
+//		{
+//			while (s2[j])
+//			{
+//				if (s1[j + i] != s2[j])
+//				{
+//					f = false;
+//					break;
+//				}
+//				++j;
+//			}
+//			if (f)
+//			{
+//				return i;
+//			}
+//		}
+//	}
+//	return -1;
+//}
 
