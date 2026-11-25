@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1400px;font-family:Manrope,system-ui,sans-serif;background:#FFF6EC;color:#2B1D16}
+.hero{height:420px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px}
+.hero img{width:620px}
+.tag{font-size:22px;letter-spacing:.32em;text-transform:uppercase;color:#8A6A55;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 1fr;}
+.panel{height:330px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+.dark{background:#1F150F;color:#FFF3E6}.apr{background:linear-gradient(135deg,#F8A65A,#E2622A);color:#fff}
+.lbl{font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;font-weight:600}
+.icons{display:flex;gap:48px;align-items:flex-end}
+.icons div{text-align:center;font-size:13px;color:#7a5f4e}
+.card{width:420px;height:265px;border-radius:22px;background:linear-gradient(150deg,#3D2A1F,#1C130E);padding:26px;color:#FFF3E6;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 60px rgba(43,29,22,.35)}
+.ctop{display:flex;justify-content:space-between;align-items:center}
+.ctop b{font-size:22px}.ctop small{font-size:12px;opacity:.6;display:block;letter-spacing:.1em}
+.dots{display:flex;gap:10px}.dots i{width:30px;height:30px;border-radius:50%;border:2.5px solid #F08A3C}
+.dots i.f{background:#F08A3C}
+.cbot{display:flex;justify-content:space-between;align-items:flex-end}
+.qr{width:78px;height:78px;background:#FFF3E6;border-radius:8px;padding:6px;display:grid;grid-template-columns:repeat(11,1fr)}
+.qr span{background:#1C130E}.qr span.o{background:none}
+.sticker{width:300px;height:300px;border-radius:50%;background:#FFF3E6;border:10px solid #F08A3C;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2B1D16}
+.sticker p{font-weight:800;font-size:20px}.sticker small{font-size:14px;opacity:.7}
+.pal{display:flex;height:150px}.pal div{flex:1;padding:22px;font-size:14px;font-weight:600;display:flex;flex-direction:column;justify-content:flex-end}
+.pal span{opacity:.7;font-weight:400}
+</style></head><body>
+<div class="hero"><img src="arivo-logo.svg"><div class="tag">Come back for more</div></div>
+<div class="row">
+ <div class="panel dark"><img src="arivo-wordmark-white.svg" style="width:330px"><div class="lbl">Wordmark · on espresso</div></div>
+ <div class="panel apr"><img src="arivo-wordmark-mono-white.svg" style="width:330px"><div class="lbl">Wordmark · on apricot</div></div>
+</div>
+<div class="row" style="background:#F3E6D6">
+ <div class="panel"><div class="icons">
+   <div><img src="arivo-icon.svg" width="150"><br>App icon</div>
+   <div><img src="arivo-icon-apricot.svg" width="150"><br>Alternate</div>
+   <div><img src="arivo-icon.svg" width="64"><br>Small</div>
+   <div><img src="arivo-icon.svg" width="32"><br>Favicon</div>
+ </div><div class="lbl">Symbol · the loop that comes back</div></div>
+ <div class="panel"><div class="card">
+   <div class="ctop"><div><small>BEAN &amp; CO</small><b>7 of 8 hatiks</b></div><img src="arivo-icon-apricot.svg" width="44"></div>
+   <div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div>
+   <div class="cbot"><div style="font-size:13px;opacity:.7">One more —<br>your next coffee is on us ☕</div><div class="qr" id="qr"></div></div>
+ </div><div class="lbl">Wallet card mockup</div></div>
+</div>
+<div class="row">
+ <div class="panel"><div class="sticker"><img src="arivo-wordmark.svg" style="width:170px"><p>We're on Arivo</p><small>Scan &amp; collect hatiks ☕</small></div><div class="lbl">Counter sticker</div></div>
+ <div class="panel dark" style="gap:26px"><img src="arivo-logo-reversed.svg" style="width:380px;filter:none"><div style="font-size:30px;font-weight:800">Արի՛, ու նորից արի՛</div><div class="lbl">Come, and come again</div></div>
+</div>
+<div class="pal">
+ <div style="background:#F08A3C;color:#fff">Apricot<span>#F08A3C</span></div>
+ <div style="background:#B3263E;color:#fff">Pomegranate<span>#B3263E</span></div>
+ <div style="background:#2B1D16;color:#FFF3E6">Espresso<span>#2B1D16</span></div>
+ <div style="background:#FFF6EC;border-top:1px solid #eadbc8">Cream<span>#FFF6EC</span></div>
+</div>
+<script>
+let s=7,q=document.getElementById('qr');const r=()=>(s=(s*9301+49297)%233280)/233280;
+for(let y=0;y<11;y++)for(let x=0;x<11;x++){const e=document.createElement('span');
+const f=(x<3&&y<3)||(x>7&&y<3)||(x<3&&y>7);const inner=(x==1&&y==1)||(x==9&&y==1)||(x==1&&y==9);
+e.className=f?(inner?'o':''):(r()>.5?'':'o');if(f&&((x%2==1&&y%2==1)&&!inner))e.className='o';q.appendChild(e)}
+</script></body></html>
