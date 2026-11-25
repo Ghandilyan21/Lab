@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arivo Splash</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; height: 100%; background: #160F0B; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  svg { height: 100vh; max-width: 100vw; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<svg id="s" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="47%" r="75%">
+      <stop offset="0" stop-color="#3B2A1F"/>
+      <stop offset="0.55" stop-color="#22170F"/>
+      <stop offset="1" stop-color="#130D09"/>
+    </radialGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#F08A3C" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#F08A3C" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dotGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1920" fill="#130D09"/>
+  <rect id="bgr" width="1080" height="1920" fill="url(#bg)"/>
+  <circle id="halo" cx="540" cy="900" r="420" fill="url(#glow)"/>
+
+  <!-- wordmark letters (a r i v), drawn in the logo's own coordinates -->
+  <g id="wm" transform="translate(195.6 732) scale(2.4)" fill="none" stroke="#FFF3E6"
+     stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <g class="L"><circle cx="30" cy="70" r="23"/><path d="M53 47V93"/></g>
+    <g class="L"><path d="M81 93V70A23 23 0 0 1 104 47"/></g>
+    <g class="L"><path d="M132 47V93"/></g>
+    <g class="L"><path d="M160 47L183 93L206 47"/></g>
+  </g>
+
+  <!-- the loop: becomes the "o" -->
+  <circle id="loop" cx="540" cy="900" r="150" fill="none" stroke="#FFF3E6"
+          stroke-width="44" stroke-linecap="round" pathLength="100"/>
+
+  <circle id="ripple" cx="0" cy="0" r="0" fill="none" stroke="#F08A3C" stroke-width="6"/>
+  <circle id="ripple2" cx="0" cy="0" r="0" fill="none" stroke="#F08A3C" stroke-width="4"/>
+
+  <!-- the dot: arrives, then hops onto the "i" -->
+  <circle id="dot" cx="0" cy="0" r="42" fill="#F08A3C" filter="url(#dotGlow)"/>
+
+  <text id="tag" x="540" y="1090" text-anchor="middle" fill="#C9A88F"
+        font-family="Manrope, system-ui, sans-serif" font-weight="600" font-size="30"
+        letter-spacing="10">COME BACK FOR MORE</text>
+</svg>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const easeInOut = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const easeOut = p => 1 - Math.pow(1 - p, 3);
+const easeOutBack = p => { const c = 1.6; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); };
+const rad = d => d * Math.PI / 180;
+
+// final geometry (logo coords scaled 2.4, offset 195.6/732)
+const S = 2.4, TX = 195.6, TY = 732;
+const O  = { x: TX + 257 * S, y: TY + 70 * S, r: 23 * S, w: 14 * S };
+const ID = { x: TX + 132 * S, y: TY + 22 * S, r: 9 * S };
+const L0 = { x: 540, y: 900, r: 150, w: 44 };
+const letters = [...document.querySelectorAll('.L')];
+
+function render(t) {
+  // background & halo
+  $('bgr').setAttribute('opacity', easeOut(seg(t, 0, 0.9)));
+
+  // 1) loop draws itself (0.2 → 1.4), then 3) morphs into the "o" (2.3 → 3.3)
+  const draw = easeInOut(seg(t, 0.2, 1.45));
+  const m = easeInOut(seg(t, 2.3, 3.3));
+  const cx = lerp(L0.x, O.x, m), cy = lerp(L0.y, O.y, m);
+  const r = lerp(L0.r, O.r, m), w = lerp(L0.w, O.w, m);
+  const spinIn = -40 * (1 - draw);
+  const start = -20 - 45 * m + spinIn;
+  const sweep = 270 * draw + 90 * m;
+  const loop = $('loop');
+  loop.setAttribute('cx', cx); loop.setAttribute('cy', cy);
+  loop.setAttribute('r', r); loop.setAttribute('stroke-width', w);
+  loop.setAttribute('stroke-dasharray', `${sweep / 3.6} 100`);
+  loop.setAttribute('transform', `rotate(${start} ${cx} ${cy})`);
+  loop.setAttribute('opacity', draw > 0.001 ? 1 : 0);
+  $('halo').setAttribute('cx', cx); $('halo').setAttribute('cy', cy);
+  $('halo').setAttribute('r', lerp(420, 260, m));
+  $('halo').setAttribute('opacity', easeOut(seg(t, 0.4, 1.6)) * (0.75 + 0.25 * Math.sin(t * 2.2)));
+
+  // 2) dot arrives in the gap (1.25 → 1.9)
+  const gap = { x: L0.x + L0.r * Math.cos(rad(-65)), y: L0.y + L0.r * Math.sin(rad(-65)) };
+  const a = seg(t, 1.25, 1.9);
+  const dot = $('dot');
+  let dx = gap.x, dy = gap.y - 160 * (1 - easeOut(a)), dr = 42 * easeOutBack(a);
+  // 4) dot hops onto the "i" (2.5 → 3.4)
+  const h = seg(t, 2.5, 3.4), he = easeInOut(h);
+  if (h > 0) {
+    const ctrl = { x: (gap.x + ID.x) / 2, y: Math.min(gap.y, ID.y) - 260 };
+    dx = (1 - he) ** 2 * gap.x + 2 * (1 - he) * he * ctrl.x + he * he * ID.x;
+    dy = (1 - he) ** 2 * gap.y + 2 * (1 - he) * he * ctrl.y + he * he * ID.y;
+    dr = lerp(42, ID.r, he);
+  }
+  // landing squash
+  const land = seg(t, 3.4, 3.75);
+  let sx = 1, sy = 1;
+  if (land > 0 && land < 1) { const k = Math.sin(land * Math.PI) * 0.22 * (1 - land); sx = 1 + k; sy = 1 - k; }
+  dot.setAttribute('cx', dx); dot.setAttribute('cy', dy); dot.setAttribute('r', Math.max(0, dr));
+  dot.setAttribute('transform', `translate(${dx} ${dy}) scale(${sx} ${sy}) translate(${-dx} ${-dy})`);
+  dot.setAttribute('opacity', clamp(a * 3));
+
+  // ripples: arrival (1.75) and landing (3.4)
+  const ripple = (el, t0, x, y, r0, r1, dur) => {
+    const p = seg(t, t0, t0 + dur);
+    el.setAttribute('cx', x); el.setAttribute('cy', y);
+    el.setAttribute('r', lerp(r0, r1, easeOut(p)));
+    el.setAttribute('opacity', p > 0 && p < 1 ? 0.7 * (1 - p) : 0);
+  };
+  ripple($('ripple'), 1.75, gap.x, gap.y, 42, 170, 0.9);
+  ripple($('ripple2'), 3.4, ID.x, ID.y, ID.r, 80, 0.7);
+
+  // letters a, r, i, v rise in (2.75 → 3.6, staggered)
+  letters.forEach((g, i) => {
+    const p = easeOut(seg(t, 2.75 + i * 0.11, 3.3 + i * 0.11));
+    g.setAttribute('opacity', p);
+    g.setAttribute('transform', `translate(0 ${14 * (1 - p)})`);
+  });
+
+  // tagline (3.6 → 4.4)
+  const tg = easeOut(seg(t, 3.6, 4.4));
+  $('tag').setAttribute('opacity', tg);
+  $('tag').setAttribute('letter-spacing', lerp(22, 10, tg));
+}
+window.render = render;
+
+// real-time playback; click to replay. ?t=2.5 freezes on a frame.
+const q = new URLSearchParams(location.search);
+if (q.has('t')) render(parseFloat(q.get('t')));
+else {
+  let t0 = performance.now();
+  const tick = now => { render(Math.min(5, (now - t0) / 1000)); requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+  $('s').addEventListener('click', () => t0 = performance.now());
+}
+</script>
+</body>
+</html>
